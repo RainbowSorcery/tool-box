@@ -17,7 +17,7 @@ namespace tool_box
 
             foreach (NetworkInterface iface in interfaces)
             {
-                if (iface.NetworkInterfaceType == NetworkInterfaceType.Wireless80211 && iface.OperationalStatus == OperationalStatus.Up)
+                if ((iface.NetworkInterfaceType == NetworkInterfaceType.Wireless80211 || iface.NetworkInterfaceType == NetworkInterfaceType.Ethernet) && iface.OperationalStatus == OperationalStatus.Up)
                 {
                     IPInterfaceProperties interfaceProperties = iface.GetIPProperties();
 
