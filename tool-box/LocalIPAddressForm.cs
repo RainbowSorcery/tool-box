@@ -1,5 +1,6 @@
 ﻿using MaterialSkin;
 using MaterialSkin.Controls;
+using System.Diagnostics;
 using System.Net.NetworkInformation;
 
 
@@ -21,12 +22,12 @@ namespace tool_box
 
         private void LocalIPAddressForm_Load(object sender, EventArgs e)
         {
-            int x = 30;
-            int y = 150;
+            int x = 15;
+            int y = 69;
 
             foreach (var item in IP.getLocalIp())
             {
-                Label label = new Label();
+                Label label = new MaterialLabel();
                 label.Location = new Point(x, y);
 
                 label.Text = item;
@@ -42,6 +43,30 @@ namespace tool_box
             Label label = (Label)sender;
             Clipboard.SetDataObject(label.Text);
             MaterialMessageBox.Show("复制成功", false);
+        }
+
+        private void materialLabel1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PingButton_Click(object sender, EventArgs e)
+        {
+            var ipTextBox = this.Controls.Find("IpTextBox", false);
+
+            foreach (var item in ipTextBox)
+            {
+                var process = new Process();
+                process.StartInfo.FileName = "telnet";
+                process.StartInfo.Arguments = "ping" + item.Text;
+                process.StartInfo.UseShellExecute = false;
+                process.StartInfo.RedirectStandardInput = true;
+                process.StartInfo.RedirectStandardOutput = true;
+                process.StartInfo.CreateNoWindow = true;
+
+                process.Start();
+                process.BeginOutputReadLine();
+            }
         }
     }
 }

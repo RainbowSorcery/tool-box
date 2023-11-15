@@ -21,5 +21,11 @@ namespace tool_box
             localIpAddressForm.ShowDialog();
 
         }
+
+        private void CodeGenerator_Click(object sender, EventArgs e)
+        {
+            CodeGeneratorForm codeGeneratorForm = new CodeGeneratorForm();
+            codeGeneratorForm.ShowDialog();
+        }
     }
 }

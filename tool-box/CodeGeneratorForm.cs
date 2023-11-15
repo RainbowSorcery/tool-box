@@ -1,6 +1,6 @@
 ﻿using MaterialSkin;
 using MaterialSkin.Controls;
-using Microsoft.Data.Sqlite;
+using SqlSugar;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,9 +13,9 @@ using System.Windows.Forms;
 
 namespace tool_box
 {
-    public partial class CodeGenerator : MaterialForm
+    public partial class CodeGeneratorForm : MaterialForm
     {
-        public CodeGenerator()
+        public CodeGeneratorForm()
         {
             InitializeComponent();
 
@@ -28,7 +28,17 @@ namespace tool_box
 
         private void materialButton1_Click(object sender, EventArgs e)
         {
+            SqlSugarScope sqlClient = DBUtils.sqlClient;
             
+            GeneratorCodeTemplateEntity generatorCodeTemplateEntity = new GeneratorCodeTemplateEntity();
+            generatorCodeTemplateEntity.Id = 1;
+            generatorCodeTemplateEntity.SchoolId = 1;
+            generatorCodeTemplateEntity.Name = "lyra";
+
+
+            DBUtils.CheckAndCreateTable<GeneratorCodeTemplateEntity>(sqlClient, "GeneratorCodeTemplateEntity");
+
+            sqlClient.Insertable(generatorCodeTemplateEntity).ExecuteCommand();
         }
     }
 }

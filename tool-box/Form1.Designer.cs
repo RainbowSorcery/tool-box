@@ -39,8 +39,8 @@
             GetLocalIpAddreass.Depth = 0;
             GetLocalIpAddreass.HighEmphasis = true;
             GetLocalIpAddreass.Icon = null;
-            GetLocalIpAddreass.Location = new Point(39, 126);
-            GetLocalIpAddreass.Margin = new Padding(6, 8, 6, 8);
+            GetLocalIpAddreass.Location = new Point(25, 89);
+            GetLocalIpAddreass.Margin = new Padding(4, 6, 4, 6);
             GetLocalIpAddreass.MouseState = MaterialSkin.MouseState.HOVER;
             GetLocalIpAddreass.Name = "GetLocalIpAddreass";
             GetLocalIpAddreass.NoAccentTextColor = Color.Empty;
@@ -59,8 +59,8 @@
             CodeGenerator.Depth = 0;
             CodeGenerator.HighEmphasis = true;
             CodeGenerator.Icon = null;
-            CodeGenerator.Location = new Point(163, 126);
-            CodeGenerator.Margin = new Padding(4, 6, 4, 6);
+            CodeGenerator.Location = new Point(159, 89);
+            CodeGenerator.Margin = new Padding(3, 4, 3, 4);
             CodeGenerator.MouseState = MaterialSkin.MouseState.HOVER;
             CodeGenerator.Name = "CodeGenerator";
             CodeGenerator.NoAccentTextColor = Color.Empty;
@@ -70,17 +70,16 @@
             CodeGenerator.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             CodeGenerator.UseAccentColor = false;
             CodeGenerator.UseVisualStyleBackColor = true;
+            CodeGenerator.Click += CodeGenerator_Click;
             // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(11F, 24F);
+            AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(763, 411);
+            ClientSize = new Size(486, 291);
             Controls.Add(CodeGenerator);
             Controls.Add(GetLocalIpAddreass);
-            Margin = new Padding(5, 4, 5, 4);
             Name = "Form1";
-            Padding = new Padding(5, 90, 5, 4);
             Text = "Form1";
             ResumeLayout(false);
             PerformLayout();
